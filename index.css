@@ -1,0 +1,188 @@
+HTML {
+    font-size: 100%;
+    line-height: 1.5;
+    box-sizing: border-box;
+  }
+  
+  BODY {
+    margin: 0;
+    color: #3a3d40;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+    color: inherit;
+  }
+ 
+  .canvas {
+    position: relative;
+    width: 600px; height: 520px;
+    margin: 0 auto;
+  }
+  
+ 
+  .head {
+    position: absolute;
+    top: 16.5%; left: 25%;
+    width: 50%; height: 67%;
+    background: rgb(166, 190, 207);
+    border-radius: 50% / 70% 70% 50% 50%;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, .2)
+  }
+  
+  
+  .head__face {
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: inherit;
+    z-index: 2;
+  }
+  
+  .head__ear {
+    position: absolute;
+    top: 5%;
+    width: 60%; height: 75%;
+    background: inherit;
+    border-radius: 75% 75% 15% 15% / 100% 100% 50% 50%;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .head__ear--left {
+    left: -30%;
+  }
+  
+  .head__ear--right {
+    right: -30%;
+  }
+  
+  .head__ear--right:after {
+    content: "";
+    position: absolute;
+    right: 35%; bottom: -3%;;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    transform: rotate(45deg);
+  }
+ 
+  .head__inner-ear {
+    position: absolute;
+    top: 10%; left: 10%;
+    width: 80%; height: 80%;
+    background: rgb(129, 156, 175);
+    border-radius: 50%;
+  }
+  
+  .head__eye {
+    position: absolute;
+    top: 25%;
+    width: 30%; height: 35%;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 2;
+  }
+  
+  .head__eye--left {
+    left: 21%; 
+  }
+  
+  .head__eye--right {
+    right: 21%;
+  }
+ 
+  .head__pupil {
+    position: absolute;
+    top: 35%; left: 36%;
+    width: 28%; height: 30%;
+    border-radius: 50%;
+    background: rgb(39, 53, 74);
+    animation: move-parts 1s ease infinite;
+    transform-origin: center;
+    animation-direction: alternate;
+  }
+
+  .head__tusk {
+    position: absolute;
+    top: 72%;
+    width: 15%; height: 70%;
+    background-color: rgb(241, 237, 227);
+    background-image: radial-gradient(150% 50px at 50% -2%, rgb(166, 190, 207) 45%, transparent 47%), 
+                      radial-gradient(150% 45px at 50% 0%, rgb(173, 173, 173) 25%, transparent 50%);
+    z-index: 2;
+    box-shadow: inherit;
+  }
+  
+  .head__tusk--left {
+     left: 20%;
+     border-bottom-right-radius: 90%;
+     transform: rotate(5deg);
+  }
+  
+  .head__tusk--right {
+     right: 20%;
+     border-bottom-left-radius: 90%;
+     transform: rotate(-5deg);
+  }
+  
+  .head__trunk {
+    position: absolute;
+    top: 55%; left: 37.5%;
+    width: 25%; height: 64%;
+    border-radius: 50px 50px 0 0;
+    background: linear-gradient(rgb(166, 190, 207) 10%, rgb(105, 120, 132) 40%, transparent 55%),
+      linear-gradient(rgb(166, 190, 207) 10%, rgb(105, 120, 132) 40%, transparent 55%),
+      linear-gradient(rgb(166, 190, 207) 10%, rgb(105, 120, 132) 40%, transparent 55%),
+      linear-gradient(rgb(166, 190, 207) 10%, rgb(105, 120, 132) 40%, transparent 55%),
+      rgb(147, 168, 183);
+    background-size: 80% 5px, 90% 5px, 70% 6px, 70% 5px,  100%;
+    background-position:  50% 35%, 50% 55%, 50% 70%,  35% 85%, 100%;
+    background-repeat: no-repeat;
+    z-index: 2;
+    box-shadow: inherit;
+    animation: bounce 0.5s;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+    animation-iteration-count: infinite;
+   
+  }
+  
+  .head__trunk::before,
+  .head__trunk::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    width: 40px; height: 30px;
+    background-color: inherit;
+  }
+  
+  .head__trunk::before {  
+    left: -5px; 
+    transform: rotate(-30deg);
+    border-radius: 50px 0px 0 50px;
+  }
+  
+  .head__trunk::after {
+    right: -5px;
+    transform: rotate(30deg);
+    border-radius: 0 50px 50px 0;
+  }
+  
+      
+  @keyframes move-parts {
+    0%,50% {
+      transform: translate(5px, 0)
+    }
+    50.1%,100% {
+      transform: translate(-5px, 0)}}
+
+
+        
+      @keyframes bounce {
+        from {
+            transform: translate3d(0, 0, 0);
+        }
+        to {
+            transform: translate3d(0, 40px, 0);
+        }
+    }
